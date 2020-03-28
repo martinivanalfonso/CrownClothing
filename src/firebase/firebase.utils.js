@@ -60,4 +60,23 @@ arrayOfObjectsToAdd.forEach(obj => {
 batch.commit()
 }
 
+export const convertCollectionsSnapshotToMap = collectionsSnapshot => {
+  const transformedCollection = collectionsSnapshot.docs.map(doc => {
+    const { title, items} = doc.data()
+
+    return ({
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    })
+
+  })
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection
+    return accumulator
+  }, {})
+}
+
 export default firebase;

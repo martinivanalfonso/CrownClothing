@@ -6,6 +6,7 @@ export const CollectionItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 350px;
+  margin-bottom: 20px;
   align-items: center;
   position: relative;
   &:hover {
@@ -42,11 +43,11 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+
 `;
 
 export const NameContainer = styled.span`
   width: 90%;
-  margin-bottom: 15px;
 `;
 
 export const PriceContainer = styled.span`
