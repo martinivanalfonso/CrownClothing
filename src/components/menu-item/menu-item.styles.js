@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
   min-width: 30%;
-  height: 240px;
+  height: ${({ size }) => (size ? '380px' : '240px')};
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -10,10 +10,6 @@ export const MenuItemContainer = styled.div`
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
-
-  &.large {
-    height: 380px;
-  }
 
   &:first-child {
     margin-right: 7.5px;
@@ -30,6 +26,10 @@ export const MenuItemContainer = styled.div`
       opacity: 0.9;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
+}
 `;
 
 export const BackgroundImageContainer = styled.div`

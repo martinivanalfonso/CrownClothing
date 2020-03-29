@@ -56,4 +56,8 @@ min-width: 165px;
   display: flex;
   justify-content: center;
   ${getButtonStyles}
+
+  @media screen and (max-width: 800px) {
+    min-width: unset;
+}
 `
